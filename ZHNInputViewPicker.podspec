@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source                    = { :git => "https://github.com/zhukov-ever/ZHNInputViewPicker.git", :tag => s.version.to_s }
   s.source_files              = "Classes", "Classes/**/*.{h,m}"
   s.public_header_files       = "Classes/**/*.h"
+  s.resources                 = "Classes/**/*.xib"
   s.framework                 = "Foundation"
   s.requires_arc              = true
 end

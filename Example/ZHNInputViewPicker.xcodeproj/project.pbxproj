@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40FCECE7BA37EC1181BBEFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D1F699E928894456295378 /* libPods.a */; };
 		CDE6E5381B955D4900A56441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E5371B955D4900A56441 /* main.m */; };
 		CDE6E53B1B955D4900A56441 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E53A1B955D4900A56441 /* AppDelegate.m */; };
 		CDE6E53E1B955D4900A56441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E53D1B955D4900A56441 /* ViewController.m */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20D1F699E928894456295378 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		434F142FB4CCCF672B3F09EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4A7C8017CA14F0E34BB52069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CDE6E5321B955D4900A56441 /* ZHNInputViewPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHNInputViewPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE6E5361B955D4900A56441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDE6E5371B955D4900A56441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40FCECE7BA37EC1181BBEFD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6692AB6B757EBA6533664EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20D1F699E928894456295378 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B197A95AD8B5A8048AB6AAA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C8017CA14F0E34BB52069 /* Pods.debug.xcconfig */,
+				434F142FB4CCCF672B3F09EC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CDE6E5291B955D4900A56441 = {
 			isa = PBXGroup;
 			children = (
 				CDE6E5341B955D4900A56441 /* ZHNInputViewPicker */,
 				CDE6E54E1B955D4A00A56441 /* ZHNInputViewPickerTests */,
 				CDE6E5331B955D4900A56441 /* Products */,
+				B197A95AD8B5A8048AB6AAA4 /* Pods */,
+				6692AB6B757EBA6533664EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDE6E5551B955D4A00A56441 /* Build configuration list for PBXNativeTarget "ZHNInputViewPicker" */;
 			buildPhases = (
+				64ECA65F716316DB06622050 /* Check Pods Manifest.lock */,
 				CDE6E52E1B955D4900A56441 /* Sources */,
 				CDE6E52F1B955D4900A56441 /* Frameworks */,
 				CDE6E5301B955D4900A56441 /* Resources */,
+				18E352D8ADBE6DFE37D91C5D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18E352D8ADBE6DFE37D91C5D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64ECA65F716316DB06622050 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDE6E52E1B955D4900A56441 /* Sources */ = {
@@ -345,6 +404,7 @@
 		};
 		CDE6E5561B955D4A00A56441 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A7C8017CA14F0E34BB52069 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZHNInputViewPicker/Info.plist;
@@ -355,6 +415,7 @@
 		};
 		CDE6E5571B955D4A00A56441 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434F142FB4CCCF672B3F09EC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZHNInputViewPicker/Info.plist;

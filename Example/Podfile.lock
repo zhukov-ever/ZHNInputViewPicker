@@ -1,0 +1,14 @@
+PODS:
+  - ZHNInputViewPicker (0.0.1)
+
+DEPENDENCIES:
+  - ZHNInputViewPicker (from `../`)
+
+EXTERNAL SOURCES:
+  ZHNInputViewPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ZHNInputViewPicker: d5f9eccdb07b5b23e944db13245724337e23db78
+
+COCOAPODS: 0.38.2
