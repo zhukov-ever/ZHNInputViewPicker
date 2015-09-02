@@ -25,10 +25,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-Hu-e94">
+                                <rect key="frame" x="16" y="76" width="201" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="7bD-yU-gV6"/>
+                                    <constraint firstAttribute="height" constant="30" id="bR7-qf-AoJ"/>
+                                </constraints>
+                                <state key="normal" title="select random row&amp;col">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectRowHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="psC-jg-T4J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eXa-Hu-e94" firstAttribute="top" secondItem="Gv0-GA-AKv" secondAttribute="bottom" constant="26" id="EVE-yK-dCC"/>
                             <constraint firstItem="Gv0-GA-AKv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="IRN-Ou-c0i"/>
+                            <constraint firstItem="eXa-Hu-e94" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="RLF-ZC-Weq"/>
                             <constraint firstItem="Gv0-GA-AKv" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="o0W-QH-ykR"/>
                             <constraint firstItem="Gv0-GA-AKv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sUb-oC-a5v"/>
                         </constraints>

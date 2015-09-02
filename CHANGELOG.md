@@ -2,8 +2,8 @@
 
 ##### New
 - method ZHNInputViewPicker::selectRow:inColumn
-- optional method ZHNInputViewPickerDataSource::inputView:widthForColumn:
-- optional method ZHNInputViewPickerDataSource::titleForButtonDoneInInputView:
+- optional method ZHNInputViewPickerDataSource::inputViewPicker:widthForColumn:
+- optional method ZHNInputViewPickerDataSource::titleForButtonDoneInInputViewPicker:
 
 ##### Enhancements
 

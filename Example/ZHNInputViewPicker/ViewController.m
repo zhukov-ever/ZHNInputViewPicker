@@ -32,6 +32,10 @@
 }
 
 
+- (IBAction)selectRowHandler:(id)sender
+{
+    [self.dataPicker selectRow:rand()%5 inColumn:rand()%3 animated:YES];
+}
 
 
 #pragma mark - UITextFieldDelegate

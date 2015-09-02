@@ -14,11 +14,20 @@
 
 @interface ZHNInputViewPicker : UIView
 
-
+/**
+ Call reloadAllComponents method in UIPickerView and reconfigure button
+ */
 - (void) reloadData;
 
+/**
+ Return array of string titles rows in UIPickerView
+ */
 - (NSArray*) selectedRowTitles;
-- (void) selectRow:(NSInteger)rowIndex inColumn:(NSInteger)columnIndex;
+
+/**
+ Selection.
+ */
+- (void) selectRow:(NSInteger)rowIndex inColumn:(NSInteger)columnIndex animated:(BOOL)animated;
 
 @property (nonatomic, weak) id<ZHNInputViewPickerDelegate> delegate;
 @property (nonatomic, weak) id<ZHNInputViewPickerDataSource> dataSource;
