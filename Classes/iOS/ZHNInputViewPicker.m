@@ -19,6 +19,8 @@
 
 @implementation ZHNInputViewPicker
 
+#pragma mark - override
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -28,15 +30,23 @@
     
     self.dataPicker.delegate = self;
     self.dataPicker.dataSource = self;
+    
+    [self configureButtonDone];
+    [self.buttonDone addTarget:self
+                        action:@selector(doneHandler:)
+              forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void) reloadData
-{
-    [self.dataPicker reloadAllComponents];
-}
+
 
 
 #pragma mark - public
+
+- (void) reloadData
+{
+    [self configureButtonDone];
+    [self.dataPicker reloadAllComponents];
+}
 
 - (NSArray*) selectedRowTitles
 {
@@ -51,6 +61,24 @@
     }
     
     return [NSArray arrayWithArray:_arrayTitles];
+}
+
+- (void) selectRow:(NSInteger)rowIndex inColumn:(NSInteger)columnIndex
+{
+    
+}
+
+
+
+#pragma mark - private
+
+- (void) configureButtonDone
+{
+    if ([self.dataSource respondsToSelector:@selector(titleForButtonDoneInInputView:)])
+    {
+        [self.buttonDone setTitle:[self.dataSource titleForButtonDoneInInputView:self]
+                         forState:UIControlStateNormal];
+    }
 }
 
 
@@ -89,5 +117,13 @@
     NSString* _selectedTitle = [self pickerView:pickerView titleForRow:row forComponent:component];
     [self.delegate inputView:self didSelectRow:row withColumn:component withTitle:_selectedTitle];
 }
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    if ([self.dataSource respondsToSelector:@selector(inputView:widthForColumn:)])
+        return [self.dataSource inputView:self widthForColumn:component];
+    return CGRectGetWidth([UIScreen mainScreen].bounds) / [self.dataSource numberOfColumnsInInputView:self];
+}
+
 
 @end

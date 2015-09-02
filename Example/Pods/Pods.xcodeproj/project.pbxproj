@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		75DD7D7A5D2967915558D0289E852889 /* PBXContainerItemProxy */ = {
+		974AD85485706A7C330483A7FEEBF7B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -219,7 +219,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7BBAECAF51207A0F44FC57AC31A5896A /* PBXTargetDependency */,
+				1E850DCB2CA7B7C00826D61C78AAF9CB /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -291,11 +291,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7BBAECAF51207A0F44FC57AC31A5896A /* PBXTargetDependency */ = {
+		1E850DCB2CA7B7C00826D61C78AAF9CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZHNInputViewPicker;
 			target = DA4ED1949456F70FDE42D1BDA1B9A824 /* ZHNInputViewPicker */;
-			targetProxy = 75DD7D7A5D2967915558D0289E852889 /* PBXContainerItemProxy */;
+			targetProxy = 974AD85485706A7C330483A7FEEBF7B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

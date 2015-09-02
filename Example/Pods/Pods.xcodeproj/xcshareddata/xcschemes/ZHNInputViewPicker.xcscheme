@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C595B800D23E3ED6A3543D8"
+               BlueprintIdentifier = "59CC5907462F2F8E3648614A"
                BuildableName = "libZHNInputViewPicker.a"
                BlueprintName = "ZHNInputViewPicker"
                ReferencedContainer = "container:Pods.xcodeproj">

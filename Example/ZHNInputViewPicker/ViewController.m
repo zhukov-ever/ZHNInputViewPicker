@@ -47,6 +47,11 @@
 
 #pragma mark - ZHNInputViewPickerDelegate, ZHNInputViewPickerDataSource
 
+- (CGFloat)inputView:(ZHNInputViewPicker *)inputView widthForColumn:(NSInteger)columnIndex
+{
+    return 70;
+}
+
 - (void)didCompleteInputView:(ZHNInputViewPicker *)inputView
 {
     [self.view endEditing:YES];

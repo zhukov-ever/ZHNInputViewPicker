@@ -17,6 +17,7 @@
 - (void) reloadData;
 
 - (NSArray*) selectedRowTitles;
+- (void) selectRow:(NSInteger)rowIndex inColumn:(NSInteger)columnIndex;
 
 @property (nonatomic, weak) id<ZHNInputViewPickerDelegate> delegate;
 @property (nonatomic, weak) id<ZHNInputViewPickerDataSource> dataSource;
@@ -39,9 +40,14 @@
 
 - (NSInteger) numberOfColumnsInInputView:(ZHNInputViewPicker*)inputView;
 - (NSInteger) inputView:(ZHNInputViewPicker*)inputView
-   numberOfRowsInColumn:(NSInteger)columnNumber;
+   numberOfRowsInColumn:(NSInteger)columnIndex;
 - (NSString*) inputView:(ZHNInputViewPicker*)inputView
             titleForRow:(NSInteger)rowIndex
               forColumn:(NSInteger)columnIndex;
+
+@optional
+- (CGFloat) inputView:(ZHNInputViewPicker*)inputView
+       widthForColumn:(NSInteger)columnIndex;
+- (NSString*) titleForButtonDoneInInputView:(ZHNInputViewPicker*)inputView;
 
 @end
