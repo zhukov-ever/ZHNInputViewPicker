@@ -43,6 +43,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     textField.inputView = self.dataPicker;
+    self.dataPicker.sender = textField;
     return YES;
 }
 
@@ -51,39 +52,41 @@
 
 #pragma mark - ZHNInputViewPickerDelegate, ZHNInputViewPickerDataSource
 
-- (CGFloat)inputViewPicker:(ZHNInputViewPicker *)inputView widthForColumn:(NSInteger)columnIndex
+- (CGFloat)inputViewPicker:(ZHNInputViewPicker *)inputView
+            widthForColumn:(NSInteger)columnIndex
 {
     return 70;
 }
 
-- (void)didCompleteInputView:(ZHNInputViewPicker *)inputView
+- (void)didCompleteInputViewPicker:(ZHNInputViewPicker *)inputView
 {
     [self.view endEditing:YES];
 }
 
-- (void) inputView:(ZHNInputViewPicker*)inputView
-      didSelectRow:(NSInteger)rowIndex
-        withColumn:(NSInteger)columnIndex
-         withTitle:(NSString*)title
+- (void) inputViewPicker:(ZHNInputViewPicker*)inputView
+            didSelectRow:(NSInteger)rowIndex
+              withColumn:(NSInteger)columnIndex
+               withTitle:(NSString*)title
 {
     NSArray* _arr = [inputView selectedRowTitles];
-    self.textField.text = [_arr componentsJoinedByString:@", "];
+    if ([inputView.sender isKindOfClass:[UITextField class]])
+        ((UITextField*)inputView.sender).text = [_arr componentsJoinedByString:@", "];
 }
 
-- (NSInteger) numberOfColumnsForInputView:(ZHNInputViewPicker*)inputView
+- (NSInteger) numberOfColumnsForInputViewPicker:(ZHNInputViewPicker*)inputView
 {
     return 3;
 }
 
 - (NSInteger) inputViewPicker:(ZHNInputViewPicker*)inputView
-   numberOfRowsInColumn:(NSInteger)columnNumber
+         numberOfRowsInColumn:(NSInteger)columnNumber
 {
     return 5;
 }
 
 - (NSString*) inputViewPicker:(ZHNInputViewPicker*)inputView
-            titleForRow:(NSInteger)rowIndex
-              forColumn:(NSInteger)columnIndex
+                  titleForRow:(NSInteger)rowIndex
+                    forColumn:(NSInteger)columnIndex
 {
     return [NSString stringWithFormat:@"r%@ c%@", @(rowIndex), @(columnIndex)];
 }
