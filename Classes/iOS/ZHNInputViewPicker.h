@@ -14,6 +14,7 @@
 
 @interface ZHNInputViewPicker : UIView
 
+
 - (void) reloadData;
 
 - (NSArray*) selectedRowTitles;
@@ -38,16 +39,16 @@
 
 @protocol ZHNInputViewPickerDataSource <NSObject>
 
-- (NSInteger) numberOfColumnsInInputView:(ZHNInputViewPicker*)inputView;
-- (NSInteger) inputView:(ZHNInputViewPicker*)inputView
-   numberOfRowsInColumn:(NSInteger)columnIndex;
-- (NSString*) inputView:(ZHNInputViewPicker*)inputView
-            titleForRow:(NSInteger)rowIndex
-              forColumn:(NSInteger)columnIndex;
+- (NSInteger) numberOfColumnsForInputView:(ZHNInputViewPicker*)inputView;
+- (NSInteger) inputViewPicker:(ZHNInputViewPicker*)inputView
+         numberOfRowsInColumn:(NSInteger)columnIndex;
+- (NSString*) inputViewPicker:(ZHNInputViewPicker*)inputView
+                  titleForRow:(NSInteger)rowIndex
+                    forColumn:(NSInteger)columnIndex;
 
 @optional
-- (CGFloat) inputView:(ZHNInputViewPicker*)inputView
-       widthForColumn:(NSInteger)columnIndex;
-- (NSString*) titleForButtonDoneInInputView:(ZHNInputViewPicker*)inputView;
+- (CGFloat) inputViewPicker:(ZHNInputViewPicker*)inputView
+             widthForColumn:(NSInteger)columnIndex;
+- (NSString*) titleForButtonDoneInInputViewPicker:(ZHNInputViewPicker*)inputView;
 
 @end

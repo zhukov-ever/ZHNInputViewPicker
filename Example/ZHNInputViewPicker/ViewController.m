@@ -47,7 +47,7 @@
 
 #pragma mark - ZHNInputViewPickerDelegate, ZHNInputViewPickerDataSource
 
-- (CGFloat)inputView:(ZHNInputViewPicker *)inputView widthForColumn:(NSInteger)columnIndex
+- (CGFloat)inputViewPicker:(ZHNInputViewPicker *)inputView widthForColumn:(NSInteger)columnIndex
 {
     return 70;
 }
@@ -66,18 +66,18 @@
     self.textField.text = [_arr componentsJoinedByString:@", "];
 }
 
-- (NSInteger) numberOfColumnsInInputView:(ZHNInputViewPicker*)inputView
+- (NSInteger) numberOfColumnsForInputView:(ZHNInputViewPicker*)inputView
 {
     return 3;
 }
 
-- (NSInteger) inputView:(ZHNInputViewPicker*)inputView
+- (NSInteger) inputViewPicker:(ZHNInputViewPicker*)inputView
    numberOfRowsInColumn:(NSInteger)columnNumber
 {
     return 5;
 }
 
-- (NSString*) inputView:(ZHNInputViewPicker*)inputView
+- (NSString*) inputViewPicker:(ZHNInputViewPicker*)inputView
             titleForRow:(NSInteger)rowIndex
               forColumn:(NSInteger)columnIndex
 {

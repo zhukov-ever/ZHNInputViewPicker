@@ -51,7 +51,7 @@
 - (NSArray*) selectedRowTitles
 {
     NSMutableArray* _arrayTitles = [NSMutableArray new];
-    NSInteger _columnNumber = [self.dataSource numberOfColumnsInInputView:self];
+    NSInteger _columnNumber = [self.dataSource numberOfColumnsForInputView:self];
     
     for (NSInteger i = 0; i < _columnNumber; i++)
     {
@@ -74,9 +74,9 @@
 
 - (void) configureButtonDone
 {
-    if ([self.dataSource respondsToSelector:@selector(titleForButtonDoneInInputView:)])
+    if ([self.dataSource respondsToSelector:@selector(titleForButtonDoneInInputViewPicker:)])
     {
-        [self.buttonDone setTitle:[self.dataSource titleForButtonDoneInInputView:self]
+        [self.buttonDone setTitle:[self.dataSource titleForButtonDoneInInputViewPicker:self]
                          forState:UIControlStateNormal];
     }
 }
@@ -99,17 +99,17 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return [self.dataSource numberOfColumnsInInputView:self];
+    return [self.dataSource numberOfColumnsForInputView:self];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [self.dataSource inputView:self numberOfRowsInColumn:component];
+    return [self.dataSource inputViewPicker:self numberOfRowsInColumn:component];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [self.dataSource inputView:self titleForRow:row forColumn:component];
+    return [self.dataSource inputViewPicker:self titleForRow:row forColumn:component];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -120,9 +120,9 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {
-    if ([self.dataSource respondsToSelector:@selector(inputView:widthForColumn:)])
-        return [self.dataSource inputView:self widthForColumn:component];
-    return CGRectGetWidth([UIScreen mainScreen].bounds) / [self.dataSource numberOfColumnsInInputView:self];
+    if ([self.dataSource respondsToSelector:@selector(inputViewPicker:widthForColumn:)])
+        return [self.dataSource inputViewPicker:self widthForColumn:component];
+    return CGRectGetWidth([UIScreen mainScreen].bounds) / [self.dataSource numberOfColumnsForInputView:self];
 }
 
 
