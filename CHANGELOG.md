@@ -1,7 +1,7 @@
 ## 0.0.2 (2015-09-02)
 
 ##### New
-- method ZHNInputViewPicker::selectRow:inColumn
+- method ZHNInputViewPicker::selectRow:inColumnanimated:
 - optional method ZHNInputViewPickerDataSource::inputViewPicker:widthForColumn:
 - optional method ZHNInputViewPickerDataSource::titleForButtonDoneInInputViewPicker:
 
