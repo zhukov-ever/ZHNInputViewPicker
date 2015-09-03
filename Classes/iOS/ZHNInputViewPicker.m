@@ -63,6 +63,11 @@
     return [NSArray arrayWithArray:_arrayTitles];
 }
 
+- (NSInteger) selectedRowAtColumn:(NSInteger)columnIndex
+{
+    return [self.dataPicker selectedRowInComponent:columnIndex];
+}
+
 - (void) selectRow:(NSInteger)rowIndex inColumn:(NSInteger)columnIndex animated:(BOOL)animated
 {
     [self.dataPicker selectRow:rowIndex inComponent:columnIndex animated:animated];

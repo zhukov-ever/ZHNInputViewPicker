@@ -35,6 +35,9 @@
 - (IBAction)selectRowHandler:(id)sender
 {
     [self.dataPicker selectRow:rand()%5 inColumn:rand()%3 animated:YES];
+    NSLog(@"0:%@", @([self.dataPicker selectedRowAtColumn:0]));
+    NSLog(@"1:%@", @([self.dataPicker selectedRowAtColumn:1]));
+    NSLog(@"2:%@", @([self.dataPicker selectedRowAtColumn:2]));
 }
 
 

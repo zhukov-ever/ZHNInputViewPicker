@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "ZHNInputViewPicker"
-  s.version                   = "0.0.3"
+  s.version                   = "0.0.4"
   s.summary                   = "Wrapper for UIPickerView which allow use it as input view."
   s.homepage                  = "https://github.com/zhukov-ever/ZHNInputViewPicker"
   s.license                   = { :type => "MIT", :file => "LICENSE" }

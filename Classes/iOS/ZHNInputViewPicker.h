@@ -32,6 +32,7 @@
  Return array of string titles rows in UIPickerView
  */
 - (NSArray*) selectedRowTitles;
+- (NSInteger) selectedRowAtColumn:(NSInteger)columnIndex;
 
 /**
  Selection. For preventing recursive calls 
